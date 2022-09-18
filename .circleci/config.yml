@@ -30,7 +30,7 @@ jobs:
   rspec:
     docker:
       - image: cimg/ruby:2.7.4-node
-      - image: cimg/postgres:14.2
+      - image: cimg/mysql:8.0
         name: "db"
         environment:
           MYSQL_USER: root
