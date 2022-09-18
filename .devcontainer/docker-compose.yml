@@ -5,21 +5,30 @@ services:
     build:
       context: ..
       dockerfile: .devcontainer/Dockerfile
-    container_name: rails-devcontainer-web
     ports:
       - "3000:3000"
     links:
       - db
     volumes:
-      - "..:/app"
-    stdin_open: true
+      - "..:/app:cached"
+    tty: true
 
   db:
-    image: postgres
-    container_name: rails-devcontainer-db
+    image: mysql:8.0
     ports:
-      - "5432:5432"
+      - "3306:3306"
     volumes:
-      - ../tmp/db:/var/lib/postgresql/data
+      - mysql-data:/var/lib/mysql
     environment:
-      POSTGRES_HOST_AUTH_METHOD: 'trust'
+      MYSQL_ROOT_PASSWORD:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      TZ: Asia/Tokyo
+
+  redis:
+    image: redis:latest
+    volumes:
+      - redis:/data
+
+volumes:
+  mysql-data:
+  redis:
