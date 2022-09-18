@@ -174,3 +174,7 @@ Style/SymbolArray:
 # URISchemes: http, https
 Layout/LineLength:
   Max: 198
+
+Rails/FilePath:
+  Exclude:
+    - 'config/environments/development.rb'
