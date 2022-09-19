@@ -1,0 +1,2 @@
+class AnnualTarget < ApplicationRecord
+end
