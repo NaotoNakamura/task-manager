@@ -1,4 +1,4 @@
 FactoryBot.define do
-  # factory :annual_target do
+  # factory :daily_task do
   # end
 end

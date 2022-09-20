@@ -1,5 +1,4 @@
 FactoryBot.define do
-  factory :monthly_target do
-    
-  end
+  # factory :monthly_target do
+  # end
 end

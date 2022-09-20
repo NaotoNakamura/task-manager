@@ -178,3 +178,7 @@ Layout/LineLength:
 Rails/FilePath:
   Exclude:
     - 'config/environments/development.rb'
+    - 'spec/rails_helper.rb'
+
+Style/Documentation:
+  Enabled: false
