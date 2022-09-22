@@ -55,7 +55,5 @@ ActiveRecord::Schema.define(version: 2022_09_20_115437) do
     t.index ["monthly_target_id"], name: "index_tasks_on_monthly_target_id"
   end
 
-  add_foreign_key "daily_tasks", "tasks"
-  add_foreign_key "gains", "monthly_targets"
   add_foreign_key "tasks", "monthly_targets"
 end
