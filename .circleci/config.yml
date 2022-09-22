@@ -46,11 +46,8 @@ jobs:
     steps:
       - setup
       - run:
-          name: rails db:migrate
-          command: bundle exec rails db:migrate
-      - run:
           name: Database setup
-          command: bundle exec rails db:schema:load --trace
+          command: bundle exec rails db:create db:test:prepare
       - run:
           name: Rspec
           command: bundle exec rspec
