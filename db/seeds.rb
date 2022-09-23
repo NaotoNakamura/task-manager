@@ -17,3 +17,24 @@ end
 3.times do |no|
   AnnualTarget.create(year: 2023, name: "#{no + 1}つ目の目標")
 end
+
+# Tasks
+3.times do |no|
+  no += 1
+  Task.create(monthly_target_id: no, name: "これは#{no}-1のタスクです", status: 0)
+  Task.create(monthly_target_id: no, name: "これは#{no}-2のタスクです", status: 1)
+end
+
+# DailyTask
+2.times do |no|
+  no += 1
+  DailyTask.create(task_id: no, name: "これは#{no}-1の日次タスクです", start_date: '2023-01-01', end_date: '2023-01-30', status: 0)
+  DailyTask.create(task_id: no, name: "これは#{no}-2の日次タスクです", start_date: '2023-01-01', end_date: '2023-01-30', status: 1)
+end
+
+# Gain
+2.times do |no|
+  no += 1
+  Gain.create(monthly_target_id: no, description: "これは#{no}-1の得られることです")
+  Gain.create(monthly_target_id: no, description: "これは#{no}-2の得られることです")
+end
