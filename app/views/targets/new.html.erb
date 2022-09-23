@@ -1,0 +1,17 @@
+年目標の新規登録
+
+<%= form_with scope: :target, url: targets_path do |f| %>
+  <p>
+    <div>
+      <%= f.label :year %>
+      <%= f.select :year, 
+        [[Time.now.year, Time.now.year], 
+        [Time.now.year + 1, Time.now.year + 1], 
+        [Time.now.year + 2, Time.now.year + 2]]
+      %>
+    </div>
+    <div><%= f.label :name %>
+    <div><%= f.text_area :name %></div>
+  </p>
+  <%= f.submit "投稿" %>
+<% end %>
