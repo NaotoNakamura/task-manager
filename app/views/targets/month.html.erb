@@ -1,4 +1,16 @@
-<%= "#{@year}年#{@month}月" %>
+<h1><%= "#{@year}年#{@month}月" %></h1>
 <% @targets.each do |target| %>
-   <%= target.name %>
+   <div style="border: solid 3px #000000;">
+      <h2>目標名：<%= target.name %></h2>
+      <% target.tasks.each do |task| %>
+         <div>タスク：<%= task.name %></div>
+         <div>ステータス：<%= task.status %></div>
+         <% task.daily_tasks.each do |daily_task| %>
+            <div>
+               <%= daily_task.name %>
+               <%= daily_task.start_date %>〜<%= daily_task.end_date %>
+            </div>
+         <% end %>
+      <% end %>
+   </div>
 <% end %>
